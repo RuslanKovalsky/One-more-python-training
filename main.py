@@ -307,7 +307,7 @@ elif m == 6:
 elif m == 7:
     print("воскресенье")"""
 
-# put your python code here
+"""# put your python code here
 m = int(input())
 year = {"1": "31",
         "2": "28",
@@ -324,7 +324,7 @@ year = {"1": "31",
 
 if m in year["m"]:
 #a = year.get("2")
-    print("m")
+    print("m")"""
 
 
 """
@@ -391,15 +391,49 @@ Sample Output:
 Это решение -  вынос мозга!!!
 
 # put your python code here
-import datetime
-
-month, day = map(int, input().split())
-year = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-if day == year[month]:
-    print(f"{month:02}.{year[month]-1:02} {month+1:02}.{1:02}")
-elif day == 1:
-    print(f"{month-1:02}.{year[month]-1:02} {month:02}.{day+1:02}")
+# put your python code here
+days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+b, a = map(int, input().split())
+if a == 1:
+    pday = days[b-2]
+    pmh = b - 1
+    fday = 2
+    fmh = b
+elif a == days[b-1]:
+    pday = a-1
+    pmh = b
+    fday = 1
+    fmh = b+1
 else:
-    print(f"{month:02}.{day - 1:02} {month:02}.{day+1:02}")
+    pday = a-1
+    pmh = b
+    fday = a+1
+    fmh = b
+print(f"{str(pmh).rjust(2, '0')}.{str(pday).rjust(2, '0')} {str(fmh).rjust(2, '0')}.{str(fday).rjust(2, '0')}")
 
 """
+"""
+Подвиг 7. Вводится целое число k (1 <= k <= 365). Определить, каким днем 
+недели (понедельник, вторник, среда, четверг, 
+пятница, суббота или воскресенье) является k-й день 
+не високосного года, в котором 1 января является понедельником.
+
+"""
+
+b = int(input())
+a = b % 7
+
+if a == 1:
+    print("понедельник")
+elif a == 2:
+    print("вторник")
+elif a == 3:
+    print("среда")
+elif a == 4:
+    print("четверг")
+elif a == 5:
+    print("пятница")
+elif a == 6:
+    print("суббота")
+elif a == 7:
+    print("воскресенье")
